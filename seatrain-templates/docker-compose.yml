@@ -5,7 +5,7 @@ version: "3.4"
 
 x-template-app: &template-app
   build:
-    context: .
+    context: ..
     dockerfile: .seatrain/Dockerfile.dev
     args:
       BUNDLER_VERSION: "2.1.4"
