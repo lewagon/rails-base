@@ -2,8 +2,8 @@ version: "3.4"
 
 x-template-app: &template-app
   build:
-    context: .seatrain
-    dockerfile: Dockerfile.dev
+    context: .
+    dockerfile: .seatrain/Dockerfile.dev
     args:
       BUNDLER_VERSION: "2.1.4"
   image: seatrain:dev
@@ -57,7 +57,7 @@ services:
 
   webpacker:
     <<: *template-app
-    command: ../bin/webpack-dev-server
+    command: "./bin/webpack-dev-server"
     ports:
       - "3035:3035"
     volumes:
