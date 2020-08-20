@@ -57,14 +57,9 @@ services:
 
   webpacker:
     <<: *template-app
-    command: "./bin/webpack-dev-server"
+    command: bundle exec webpack-dev-server
     ports:
       - "3035:3035"
-    volumes:
-      - .:/app
-      - bundle:/usr/local/bundle
-      - node_modules:/app/node_modules
-      - packs:/app/public/packs
     environment:
       - NODE_ENV=${NODE_ENV:-development}
       - RAILS_ENV=${RAILS_ENV:-development}
