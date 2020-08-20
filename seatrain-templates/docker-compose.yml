@@ -1,12 +1,9 @@
 version: "3.4"
 
-# General config for app, rails, sidekiq, webpacker
-# Magic from https://evilmartians.com/chronicles/ruby-on-whales-docker-for-ruby-rails-development
-
 x-template-app: &template-app
   build:
-    context: ..
-    dockerfile: .seatrain/Dockerfile.dev
+    context: .seatrain
+    dockerfile: Dockerfile.dev
     args:
       BUNDLER_VERSION: "2.1.4"
   image: seatrain:dev
