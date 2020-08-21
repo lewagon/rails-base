@@ -31,7 +31,7 @@ x-template-app: &template-app
     - EDITOR=vi
 
 services:
-  app: &app
+  app:
     <<: *template-app
     command: irb
     depends_on:
