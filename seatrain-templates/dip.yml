@@ -108,4 +108,4 @@ provision:
   - docker-compose up -d --build app
   - dip bundle install
   - dip yarn install
-  - dip rails db:reset
+  - dip rails db:drop db:create db:migrate
