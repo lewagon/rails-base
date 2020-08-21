@@ -12,6 +12,7 @@ x-template-app: &template-app
   stdin_open: true
   tty: true
   volumes:
+    - "~/code/lewagon/seatrain:/root/code/lewagon/seatrain" # TODO: remove after gem testing
     - .:/app:cached
     - rails_cache:/app/tmp/cache
     - bundle:/usr/local/bundle
