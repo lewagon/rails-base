@@ -3,16 +3,12 @@ entries:
   seatrain-base:
   - apiVersion: v2
     appVersion: "1"
-    created: "2020-08-31T16:30:50.443777+02:00"
-    dependencies:
-    - name: redis
-      repository: '@stable'
-      version: 10.2.1
+    created: "2020-08-31T16:59:10.148959+02:00"
     description: Subchart with common resources for a standard Rails deployment
-    digest: f3bb28259e9428b55fd202a720db28473028a8c06b45504c669f40ffcb2ea9a9
+    digest: 0ffea349d820c78428d0035a4fbe5e00e72e4fcaee8c9c2504a0b4d4e6ce1d11
     name: seatrain-base
     type: application
     urls:
     - https://lewagon.github.io/seatrain/seatrain-base-0.1.0.tgz
     version: 0.1.0
-generated: "2020-08-31T16:30:50.437152+02:00"
+generated: "2020-08-31T16:59:10.143782+02:00"
