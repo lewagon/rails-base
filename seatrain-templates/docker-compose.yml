@@ -9,7 +9,7 @@ x-template-app: &template-app
       NODE_MAJOR: 12
       YARN_VERSION: 1.22.4
       BUNDLER_VERSION: 2.1.4
-  image: railsk8sdemo:dev
+  image: seatrain:dev
   tmpfs:
     - "/tmp"
   stdin_open: true
