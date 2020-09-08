@@ -56,25 +56,14 @@ ENV PATH=/app/bin:$PATH
 
 WORKDIR /app
 
+COPY . .
+
 # Upgrade RubyGems and install required Bundler version
 RUN gem update --system && \
   gem install bundler:$BUNDLER_VERSION && \
-  bundle config set deployment 'true' && \
   bundle config set without 'development test' && \
+  bundle config set deployment 'true' && \
   bundle install
-
-# copy selected folders
-COPY app/ ./app
-COPY bin/ ./bin
-COPY config/ ./config
-COPY lib/ ./lib
-COPY db/ ./db
-COPY public/ ./public
-# copy rest of the files from root
-COPY {,.}* ./
-# create log folder anew
-RUN mkdir log
-
 
 ENV RAILS_ENV=production
 ENV RACK_ENV=production
@@ -88,7 +77,9 @@ ENV RAILS_LOG_TO_STDOUT=enabled
 ENV RAILS_SERVE_STATIC_FILES=enabled
 
 # cleanup
-RUN rm -rf node_modules tmp/cache vendor/assets test
+RUN rm -rf node_modules tmp/cache vendor/assets test log
+# create log folder anew
+RUN mkdir log
 RUN rails assets:clean
 
 EXPOSE 3000
